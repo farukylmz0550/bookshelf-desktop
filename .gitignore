@@ -35,6 +35,10 @@ htmlcov/
 .coverage
 .coverage.*
 
+# Flatpak build output and the pre-downloaded wheelhouse.
+.flatpak-builder/
+packaging/flatpak/wheels/
+
 # OS files.
 .DS_Store
 Thumbs.db

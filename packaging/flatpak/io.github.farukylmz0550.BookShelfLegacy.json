@@ -3,6 +3,7 @@
   "runtime": "org.gnome.Platform",
   "runtime-version": "50",
   "sdk": "org.gnome.Sdk",
+  "default-branch": "1.1.0",
   "command": "bookshelf",
   "finish-args": [
     "--share=ipc",
@@ -18,7 +19,13 @@
       "name": "python-deps",
       "buildsystem": "simple",
       "build-commands": [
-        "pip3 install --no-compile --prefix=${FLATPAK_DEST} matplotlib openpyxl keyring"
+        "pip3 install --no-index --no-compile --prefix=${FLATPAK_DEST} --find-links=. matplotlib openpyxl keyring"
+      ],
+      "sources": [
+        {
+          "type": "dir",
+          "path": "wheels"
+        }
       ],
       "cleanup": ["*.dist-info", "__pycache__"]
     },
@@ -28,7 +35,7 @@
       "sources": [
         {
           "type": "dir",
-          "path": "."
+          "path": "../.."
         }
       ],
       "build-commands": [
