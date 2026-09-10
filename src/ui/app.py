@@ -1,4 +1,4 @@
-# Katip Celebi — the GtkApplication itself.
+# Book Shelf — the GtkApplication itself.
 # License: GPL-3.0-or-later (see LICENSE).
 
 """Application bootstrap: flags, theming, and the single main window."""
@@ -14,8 +14,8 @@ from gi.repository import Adw, Gio, GLib
 from shared import config, logs, texts, theme
 from ui.window import MainWindow
 
-APP_ID = "io.github.farukylmz0550.KatipCelebiLegacy"
-logger = logging.getLogger("katipcelebi")
+APP_ID = "io.github.farukylmz0550.BookShelfLegacy"
+logger = logging.getLogger("bookshelf")
 
 
 class KatipApp(Adw.Application):

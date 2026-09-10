@@ -1,4 +1,4 @@
-# Katip Celebi — one book in the wall of covers.
+# Book Shelf — one book in the wall of covers.
 # License: GPL-3.0-or-later (see LICENSE).
 
 """A compact card: cover picture on top, one caption line, badges.

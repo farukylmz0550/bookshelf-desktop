@@ -1,4 +1,4 @@
-# Katip Celebi — the settings page.
+# Book Shelf — the settings page.
 # License: GPL-3.0-or-later (see LICENSE).
 
 """Everything that survives a restart: theme, language, folder, cache.
@@ -23,7 +23,7 @@ from services.updater import check_for_update
 from .dialogs.confirmation import alert, pick_folder, toast
 from .work import run
 
-logger = logging.getLogger("katipcelebi")
+logger = logging.getLogger("bookshelf")
 
 THEMES = ("default-light", "default-dark", "contrast-light", "contrast-dark", "custom")
 LANGS = (("en", "🇬🇧 English"), ("tr", "🇹🇷 Türkçe"), ("ru", "🇷🇺 Русский"),
@@ -164,6 +164,6 @@ class SettingsPage(Adw.PreferencesPage):
         version = paths.project_version()
         row = Adw.ActionRow(
             title=text("app_name"),
-            subtitle=f"v{version} · GPL-3.0 · github.com/farukylmz0550/KatipCelebi",
+            subtitle=f"v{version} · GPL-3.0 · github.com/farukylmz0550/bookshelf-legacy",
         )
         return row

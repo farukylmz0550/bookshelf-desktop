@@ -1,4 +1,4 @@
-# Katip Celebi — the main window and page navigation.
+# Book Shelf — the main window and page navigation.
 # License: GPL-3.0-or-later (see LICENSE).
 
 """Application shell: sidebar navigation plus a stack of pages.
@@ -33,7 +33,7 @@ from .stats_page import StatsPage
 from .setup_wizard import SetupPage
 from .welcome import WelcomePage
 
-logger = logging.getLogger("katipcelebi")
+logger = logging.getLogger("bookshelf")
 
 
 class MainWindow(Adw.ApplicationWindow):

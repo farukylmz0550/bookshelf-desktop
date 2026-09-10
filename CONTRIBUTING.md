@@ -10,4 +10,4 @@ Contributions are welcome. Please keep a few rules in mind:
 
 ## Reporting bugs
 
-Open an issue with the steps to reproduce and the log file (`katipcelebi.log` inside your library folder).
+Open an issue with the steps to reproduce and the log file (`bookshelf.log` inside your library folder).

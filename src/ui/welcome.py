@@ -1,4 +1,4 @@
-# Katip Celebi — the first-run welcome page.
+# Book Shelf — the first-run welcome page.
 # License: GPL-3.0-or-later (see LICENSE).
 
 import gi

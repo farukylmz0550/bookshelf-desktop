@@ -1,4 +1,4 @@
-# Katip Celebi — alert and toast helpers.
+# Book Shelf — alert and toast helpers.
 # License: GPL-3.0-or-later (see LICENSE).
 
 """Centre-place for confirmations, notices and toasts.

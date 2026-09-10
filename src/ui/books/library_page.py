@@ -1,4 +1,4 @@
-# Katip Celebi — the library page: search, filters, cover grid.
+# Book Shelf — the library page: search, filters, cover grid.
 # License: GPL-3.0-or-later (see LICENSE).
 
 """A wall of covers with a search bar and an advanced filter panel.
@@ -45,7 +45,7 @@ class LibraryPage(Gtk.Box):
         self.advanced = Gtk.Revealer(child=advanced)
         self.toggle = Gtk.ToggleButton(label=text("advanced_search"))
         self.toggle.connect("toggled", lambda b: self.advanced.set_reveal_child(b.get_active()))
-        self.rating = self._drop("filter_rating_%s", ("any", "5", "4", "3", "2", "1"), self.refresh)
+        self.rating = self._rating_drop()
         self.signed = self._drop("filter_signed_%s", SIGNED, self.refresh)
         self.lent = self._drop("filter_lent_%s", LENT, self.refresh)
         self.status = self._drop("filter_status_%s", [STATUS_ANY] + list(STATUSES), self.refresh)
@@ -93,6 +93,17 @@ class LibraryPage(Gtk.Box):
         )
         drop = Gtk.DropDown(model=model)
         drop.connect("notify::selected", lambda d, _p: on_change())
+        drop._values = values  # noqa: SLF001 - kept beside the widget
+        return drop
+
+    def _rating_drop(self) -> Gtk.DropDown:
+        """Rating filter: 'any' plus '{n} stars or more', highest first."""
+        values = ("any", "5", "4", "3", "2", "1")
+        labels = [text("filter_rating_any")] + [
+            text("filter_rating_min").format(n=k) for k in (5, 4, 3, 2, 1)
+        ]
+        drop = Gtk.DropDown(model=Gtk.StringList.new(labels))
+        drop.connect("notify::selected", lambda d, _p: self.refresh())
         drop._values = values  # noqa: SLF001 - kept beside the widget
         return drop
 

@@ -1,4 +1,4 @@
-# Katip Celebi
+# Book Shelf
 # Copyright (C) 2026 farukylmz0550
 #
 # This program is free software: you can redistribute it and/or modify
@@ -25,7 +25,7 @@ import os
 import sys
 from pathlib import Path
 
-APP_DIR_NAME = "KatipCelebi"
+APP_DIR_NAME = "BookShelf"
 
 # The user's own files, inside the folder they picked. Deliberately not the
 # names the previous version used: if someone points this app at their old
@@ -33,7 +33,7 @@ APP_DIR_NAME = "KatipCelebi"
 LIBRARY_FILENAME = "library.json"
 PEOPLE_FILENAME = "people.json"
 LOANS_FILENAME = "loans.json"
-LOG_FILENAME = "katipcelebi.log"
+LOG_FILENAME = "bookshelf.log"
 
 
 def assets_dir() -> Path:

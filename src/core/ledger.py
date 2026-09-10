@@ -1,4 +1,4 @@
-# Katip Celebi
+# Book Shelf
 # Copyright (C) 2026 farukylmz0550
 #
 # This program is free software: you can redistribute it and/or modify
@@ -24,7 +24,7 @@ from core.person import Loan, Person, now, open_loan_for
 from shared.paths import loans_path, people_path
 from shared.storage import DataFileDamaged, read_rows, write_rows
 
-logger = logging.getLogger("katipcelebi")
+logger = logging.getLogger("bookshelf")
 
 
 def normalize_name(name: str) -> str:

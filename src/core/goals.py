@@ -1,4 +1,4 @@
-# Katip Celebi
+# Book Shelf
 # Copyright (C) 2026 farukylmz0550
 #
 # This program is free software: you can redistribute it and/or modify
@@ -28,7 +28,7 @@ from pathlib import Path
 
 from shared.storage import DataFileDamaged, read_rows, write_rows
 
-logger = logging.getLogger("katipcelebi")
+logger = logging.getLogger("bookshelf")
 
 GOALS_FILENAME = "goals.json"
 

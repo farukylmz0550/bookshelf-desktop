@@ -1,4 +1,4 @@
-# Katip Celebi — off-thread work dispatch.
+# Book Shelf — off-thread work dispatch.
 # License: GPL-3.0-or-later (see LICENSE).
 
 """Run a callable in a thread and deliver its result on the main loop.
@@ -15,7 +15,7 @@ import gi
 gi.require_version("Gtk", "4.0")
 from gi.repository import GLib
 
-logger = logging.getLogger("katipcelebi")
+logger = logging.getLogger("bookshelf")
 
 
 def run(work, on_done) -> None:

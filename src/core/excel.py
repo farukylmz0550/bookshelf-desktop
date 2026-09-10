@@ -17,7 +17,7 @@ from core.book import Book, is_valid_isbn, normalize_isbn
 from core.reading import parse_stamp, reading_days, status_of
 from shared.texts import field_label, text
 
-logger = logging.getLogger("katipcelebi")
+logger = logging.getLogger("bookshelf")
 
 TEMPLATE_DEFAULT_NAME = "isbn_list.xlsx"
 EXPORT_DEFAULT_NAME = "my_library.xlsx"

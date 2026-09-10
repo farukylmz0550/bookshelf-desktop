@@ -1,4 +1,4 @@
-# Katip Celebi — background cover loading.
+# Book Shelf — background cover loading.
 # License: GPL-3.0-or-later (see LICENSE).
 
 """Load book covers off the UI thread, with an in-memory cache.
@@ -18,7 +18,7 @@ from gi.repository import GdkPixbuf, GLib
 
 from services.openlibrary import COVER_SIZE_LARGE, COVER_SIZE_THUMB, cover_cache_path, fetch_cover
 
-logger = logging.getLogger("katipcelebi")
+logger = logging.getLogger("bookshelf")
 
 THUMB_SIZE = (150, 210)
 LARGE_SIZE = (260, 380)

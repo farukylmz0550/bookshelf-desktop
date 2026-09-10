@@ -1,4 +1,4 @@
-# Katip Celebi — clickable five-star rating.
+# Book Shelf — clickable five-star rating.
 # License: GPL-3.0-or-later (see LICENSE).
 
 """A row of five stars drawn with text, lit up to the current rating.

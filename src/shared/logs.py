@@ -1,4 +1,4 @@
-# Katip Celebi
+# Book Shelf
 # Copyright (C) 2026 farukylmz0550
 #
 # This program is free software: you can redistribute it and/or modify
@@ -31,7 +31,7 @@ from pathlib import Path
 
 from shared.paths import LOG_FILENAME
 
-logger = logging.getLogger("katipcelebi")
+logger = logging.getLogger("bookshelf")
 
 # A megabyte is a long day's use, and three of them is enough history to see
 # what happened before the thing the user is asking about.

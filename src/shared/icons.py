@@ -1,9 +1,9 @@
-# Katip Celebi — symbolic icon names for buttons and navigation.
+# Book Shelf — symbolic icon names for buttons and navigation.
 # License: GPL-3.0-or-later (see LICENSE).
 
 """Standard icon names resolved through the GTK icon theme."""
 
-APP_LOGO = "assets/katipcelebi.svg"
+APP_LOGO = "assets/logo.svg"  # pending: new logo
 
 # Logical name -> freedesktop/GNOME symbolic icon name.
 ICONS = {

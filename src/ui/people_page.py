@@ -1,4 +1,4 @@
-# Katip Celebi — the people page.
+# Book Shelf — the people page.
 # License: GPL-3.0-or-later (see LICENSE).
 
 """A table of borrowers and the loan history of whoever is selected.
@@ -77,7 +77,7 @@ class PeoplePage(Gtk.Box):
         self.count = Gtk.Label(xalign=0, css_classes=["dim-label"])
         self.append(self.count)
 
-        self.table = table("col_person", "col_trust", "col_returned", "col_out", "col_id")
+        self.table = table("col_person", "col_trust", "col_returned", "col_out")
         self.people_model = self.table.get_model().get_model()
         scroller = Gtk.ScrolledWindow(vexpand=True, height_request=260)
         scroller.set_child(self.table)
@@ -105,7 +105,6 @@ class PeoplePage(Gtk.Box):
                 str(ledger.trust_score(person.id)),
                 str(pm.returned_count(ledger.loans, person.id)),
                 str(len(pm.books_out_with(ledger.loans, person.id))),
-                person.id,
             ), person))
         self.count.set_text(text("people_count").format(n=len(ledger.people)))
         self._show_history()

@@ -1,4 +1,4 @@
-# Katip Celebi — the personal panel: rating, reading, tags, notes.
+# Book Shelf — the personal panel: rating, reading, tags, notes.
 # License: GPL-3.0-or-later (see LICENSE).
 
 """Everything about this book and me, not about the work itself.
@@ -19,7 +19,7 @@ from shared.texts import text
 
 from ..widgets.star_rating import StarRating
 
-logger = logging.getLogger("katipcelebi")
+logger = logging.getLogger("bookshelf")
 
 MEANS_YES = ("yes", "true", "1", "evet")
 

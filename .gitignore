@@ -5,8 +5,8 @@ library.json
 people.json
 loans.json
 goals.json
-katipcelebi.log
-katipcelebi.log.*
+bookshelf.log
+bookshelf.log.*
 
 # The rescue copy kept when a data file cannot be read.
 *.json.damaged.bak

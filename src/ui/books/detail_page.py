@@ -1,4 +1,4 @@
-# Katip Celebi — one book, in full.
+# Book Shelf — one book, in full.
 # License: GPL-3.0-or-later (see LICENSE).
 
 """Detail page: big cover, three panels, and deletion.
@@ -21,7 +21,7 @@ from .lending_panel import LendingPanel
 from .personal_panel import PersonalPanel
 from ..dialogs.confirmation import confirm, toast
 
-logger = logging.getLogger("katipcelebi")
+logger = logging.getLogger("bookshelf")
 
 
 class DetailPage(Gtk.Box):

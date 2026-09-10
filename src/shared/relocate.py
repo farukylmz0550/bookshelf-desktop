@@ -1,4 +1,4 @@
-# Katip Celebi
+# Book Shelf
 # Copyright (C) 2026 farukylmz0550
 #
 # This program is free software: you can redistribute it and/or modify
@@ -38,7 +38,7 @@ from shared.paths import (
 )
 from core.goals import GOALS_FILENAME
 
-logger = logging.getLogger("katipcelebi")
+logger = logging.getLogger("bookshelf")
 
 # The files that are the user's library. A rescue copy travels with them: it is
 # the way back to a library as it was, and worth nothing in a folder they have

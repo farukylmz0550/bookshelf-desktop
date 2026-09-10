@@ -1,4 +1,4 @@
-# Katip Celebi
+# Book Shelf
 # Copyright (C) 2026 farukylmz0550
 #
 # This program is free software: you can redistribute it and/or modify
@@ -32,12 +32,12 @@ fallback.
 import json
 import logging
 
-logger = logging.getLogger("katipcelebi")
+logger = logging.getLogger("bookshelf")
 
 # One record under one name, holding both halves of the sign-in as JSON. The
 # store is a name-to-secret map; the username lives inside the secret so that
 # it, too, stays out of any file.
-SERVICE = "Katip Celebi - Open Library"
+SERVICE = "Book Shelf - Open Library"
 ACCOUNT = "openlibrary"
 
 try:

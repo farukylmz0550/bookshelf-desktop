@@ -1,4 +1,4 @@
-# Katip Celebi
+# Book Shelf
 # Copyright (C) 2026 farukylmz0550
 #
 # This program is free software: you can redistribute it and/or modify
@@ -34,7 +34,7 @@ import logging
 
 from shared.paths import assets_dir
 
-logger = logging.getLogger("katipcelebi")
+logger = logging.getLogger("bookshelf")
 
 # The one language guaranteed to be complete: the app is written in it, and
 # every other file is checked against it.

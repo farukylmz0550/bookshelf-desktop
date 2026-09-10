@@ -1,4 +1,4 @@
-# Katip Celebi — first-run setup: language, folder, theme.
+# Book Shelf — first-run setup: language, folder, theme.
 # License: GPL-3.0-or-later (see LICENSE).
 
 """Three choices and a start button.
@@ -81,7 +81,7 @@ class SetupPage(Gtk.Box):
         self.on_theme(name)
 
     def _folder_row(self) -> Adw.ActionRow:
-        self.folder = config.library_dir() or Path.home() / "Documents" / "KatipCelebi"
+        self.folder = config.library_dir() or Path.home() / "Documents" / "BookShelf"
         self.folder_label = Gtk.Label(label=str(self.folder), ellipsize=3)
         row = Adw.ActionRow(title=text("settings_where"))
         row.set_subtitle_widget(self.folder_label)

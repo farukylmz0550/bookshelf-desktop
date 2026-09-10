@@ -1,4 +1,4 @@
-# Katip Celebi
+# Book Shelf
 # Copyright (C) 2026 farukylmz0550
 #
 # This program is free software: you can redistribute it and/or modify
@@ -18,7 +18,7 @@ import json
 from urllib.request import urlopen
 
 REPO_RELEASES_URL = (
-    "https://api.github.com/repos/farukylmz0550/KatipCelebi/releases/latest"
+    "https://api.github.com/repos/farukylmz0550/bookshelf-legacy/releases/latest"
 )
 
 

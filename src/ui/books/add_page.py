@@ -1,4 +1,4 @@
-# Katip Celebi — the add-book page.
+# Book Shelf — the add-book page.
 # License: GPL-3.0-or-later (see LICENSE).
 
 """Look a book up by ISBN, check it over, keep it.
@@ -28,7 +28,7 @@ from ..dialogs.confirmation import alert, pick_open, pick_save
 from ..work import run
 from ..widgets.star_rating import StarRating
 
-logger = logging.getLogger("katipcelebi")
+logger = logging.getLogger("bookshelf")
 
 SECTIONS = (
     ("section_basic", ("title", "subtitle", "authors", "publishers",

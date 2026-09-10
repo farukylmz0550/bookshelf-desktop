@@ -1,4 +1,4 @@
-# Katip Celebi — the catalogue facts panel.
+# Book Shelf — the catalogue facts panel.
 # License: GPL-3.0-or-later (see LICENSE).
 
 """Read-only display of a book's catalogue data, with an edit mode.

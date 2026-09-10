@@ -11,9 +11,9 @@ from core.excel import MAX_IMPORT_BYTES
 from shared.paths import project_version, cover_cache_dir
 from core.book import normalize_isbn
 
-logger = logging.getLogger("katipcelebi")
+logger = logging.getLogger("bookshelf")
 
-USER_AGENT = f"KatipCelebi/{project_version()} (+https://github.com/farukylmz0550/KatipCelebi)"
+USER_AGENT = f"BookShelf/{project_version()} (+https://github.com/farukylmz0550/bookshelf-legacy)"
 API_ROOT = "https://openlibrary.org"
 COVERS_ROOT = "https://covers.openlibrary.org/b/isbn/"
 TIMEOUT = 10
@@ -79,7 +79,7 @@ def _edition(book) -> dict:
     isbn = normalize_isbn(book.key)
     edition = {
         "title": book.title,
-        "source_records": [f"katipcelebi-manual:{isbn}"],
+        "source_records": [f"bookshelf-manual:{isbn}"],
     }
     if book.authors.strip():
         edition["authors"] = [
@@ -220,7 +220,7 @@ from typing import Any
 from core import tags
 from core.book import Book, normalize_isbn
 
-logger = logging.getLogger("katipcelebi")
+logger = logging.getLogger("bookshelf")
 
 LANGUAGES = {
     "/languages/eng": "English",

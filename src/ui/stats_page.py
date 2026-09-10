@@ -1,4 +1,4 @@
-# Katip Celebi — the statistics page.
+# Book Shelf — the statistics page.
 # License: GPL-3.0-or-later (see LICENSE).
 
 """Metric cards, reading goals, and pie charts of the collection.
@@ -55,7 +55,7 @@ class StatsPage(Gtk.Box):
             ("this_year", "metric_this_year"), ("average", "metric_average"),
             ("total", "metric_total"),
         ):
-            card = MetricCard(text(key))
+            card = MetricCard(text(label))
             self.cards[key] = card
             metrics.append(card)
         self.append(metrics)
@@ -110,7 +110,7 @@ class StatsPage(Gtk.Box):
             "this_month": str(finished),
             "this_year": str(summary.finished_in_year(books, today.year)),
             "average": text("metric_no_average") if average is None else format_duration(average),
-            "total": text("metric_total").format(n=len(books)),
+            "total": str(len(books)),
         }
         for key, value in cards.items():
             self.cards[key].set(value)

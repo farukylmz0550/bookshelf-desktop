@@ -1,4 +1,4 @@
-# Katip Celebi — the lending panel: who has it, when it came back.
+# Book Shelf — the lending panel: who has it, when it came back.
 # License: GPL-3.0-or-later (see LICENSE).
 
 """Copy counts, the list of open loans, and the act of lending.
@@ -20,7 +20,7 @@ from shared.texts import text
 
 from ..dialogs.confirmation import toast
 
-logger = logging.getLogger("katipcelebi")
+logger = logging.getLogger("bookshelf")
 
 
 class LendingPanel(Gtk.Box):

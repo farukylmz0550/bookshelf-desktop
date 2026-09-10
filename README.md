@@ -1,8 +1,8 @@
-# Katip Celebi (Legacy — GTK4)
+# Book Shelf (Legacy — GTK4)
 
 A desktop personal library manager for GNOME and Linux, built with **GTK4 + libadwaita**.
 
-This is the final desktop edition of Katip Celebi. The main repository continues as a web project; this one keeps the desktop app alive on the GNOME stack.
+This is the final desktop edition of Book Shelf. The main repository continues as a web project; this one keeps the desktop app alive on the GNOME stack.
 
 ## Features
 

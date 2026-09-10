@@ -1,4 +1,4 @@
-# Katip Celebi — entry point.
+# Book Shelf — entry point.
 # License: GPL-3.0-or-later (see LICENSE).
 
 import sys

@@ -1,4 +1,4 @@
-# Katip Celebi — theme handling via libadwaita.
+# Book Shelf — theme handling via libadwaita.
 # License: GPL-3.0-or-later (see LICENSE).
 
 """Colour scheme management backed by Adwaita.

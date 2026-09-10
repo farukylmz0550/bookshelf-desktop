@@ -1,4 +1,4 @@
-# Katip Celebi
+# Book Shelf
 # Copyright (C) 2026 farukylmz0550
 #
 # This program is free software: you can redistribute it and/or modify
@@ -24,7 +24,7 @@ from typing import Any
 from shared.paths import config_path
 from shared.storage import backup_file, write_atomically
 
-logger = logging.getLogger("katipcelebi")
+logger = logging.getLogger("bookshelf")
 
 
 def _readable() -> bool:
