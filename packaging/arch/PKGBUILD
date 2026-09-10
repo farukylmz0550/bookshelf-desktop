@@ -16,21 +16,21 @@ package() {
     "$pkgdir/usr/share/icons/hicolor/scalable/apps" \
     "$pkgdir/usr/share/licenses/$pkgname"
 
-  cp -r "$srcdir/src" "$pkgdir/usr/lib/$pkgname/src"
-  cp -r "$srcdir/assets" "$pkgdir/usr/lib/$pkgname/assets"
+  cp -r "$startdir/src" "$pkgdir/usr/lib/$pkgname/src"
+  cp -r "$startdir/assets" "$pkgdir/usr/lib/$pkgname/assets"
   rm -rf "$pkgdir/usr/lib/$pkgname/assets/screenshots"
 
-  install -m 644 "$srcdir/VERSION" "$pkgdir/usr/lib/$pkgname/VERSION"
-  install -m 644 "$srcdir/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-  install -m 755 "$srcdir/packaging/bookshelf-launcher" "$pkgdir/usr/bin/bookshelf"
-  install -m 644 "$srcdir/packaging/io.github.farukylmz0550.BookShelfLegacy.desktop" \
+  install -m 644 "$startdir/VERSION" "$pkgdir/usr/lib/$pkgname/VERSION"
+  install -m 644 "$startdir/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -m 755 "$startdir/packaging/bookshelf-launcher" "$pkgdir/usr/bin/bookshelf"
+  install -m 644 "$startdir/packaging/io.github.farukylmz0550.BookShelfLegacy.desktop" \
     "$pkgdir/usr/share/applications/"
-  install -m 644 "$srcdir/packaging/io.github.farukylmz0550.BookShelfLegacy.metainfo.xml" \
+  install -m 644 "$startdir/packaging/io.github.farukylmz0550.BookShelfLegacy.metainfo.xml" \
     "$pkgdir/usr/share/metainfo/"
   install -m 644 \
-    "$srcdir/assets/icons/hicolor/256x256/apps/io.github.farukylmz0550.BookShelfLegacy.png" \
+    "$startdir/assets/icons/hicolor/256x256/apps/io.github.farukylmz0550.BookShelfLegacy.png" \
     "$pkgdir/usr/share/icons/hicolor/256x256/apps/"
   install -m 644 \
-    "$srcdir/assets/icons/hicolor/scalable/apps/io.github.farukylmz0550.BookShelfLegacy-symbolic.svg" \
+    "$startdir/assets/icons/hicolor/scalable/apps/io.github.farukylmz0550.BookShelfLegacy-symbolic.svg" \
     "$pkgdir/usr/share/icons/hicolor/scalable/apps/"
 }
