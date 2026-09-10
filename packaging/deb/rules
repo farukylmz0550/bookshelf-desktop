@@ -5,4 +5,7 @@
 
 override_dh_install:
 	dh_install
-	chmod 755 debian/bookshelf/usr/bin/bookshelf
+	install -D -m 755 packaging/bookshelf-launcher debian/bookshelf/usr/bin/bookshelf
+
+override_dh_strip_nondeterminism:
+	true

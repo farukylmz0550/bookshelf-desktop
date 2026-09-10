@@ -13,10 +13,9 @@ cp packaging/deb/rules "$work/debian/rules"
 cp packaging/deb/install "$work/debian/install"
 cp packaging/deb/changelog "$work/debian/changelog"
 cp packaging/deb/copyright "$work/debian/copyright"
-echo 13 > "$work/debian/compat"
 echo "3.0 (native)" > "$work/debian/source/format"
 cd "$work"
-dpkg-buildpackage -us -uc -b
+dpkg-buildpackage -us -uc -b -d
 cd - >/dev/null
 mv "$work/../bookshelf_${VERSION}-1_all.deb" .
 echo "Built: bookshelf_${VERSION}-1_all.deb"

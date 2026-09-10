@@ -1,0 +1,49 @@
+{
+  "id": "io.github.farukylmz0550.BookShelfLegacy",
+  "runtime": "org.gnome.Platform",
+  "runtime-version": "50",
+  "sdk": "org.gnome.Sdk",
+  "command": "bookshelf",
+  "finish-args": [
+    "--share=ipc",
+    "--share=network",
+    "--socket=wayland",
+    "--socket=fallback-x11",
+    "--device=dri",
+    "--talk-name=org.freedesktop.secrets",
+    "--filesystem=home"
+  ],
+  "modules": [
+    {
+      "name": "python-deps",
+      "buildsystem": "simple",
+      "build-commands": [
+        "pip3 install --no-compile --prefix=${FLATPAK_DEST} matplotlib openpyxl keyring"
+      ],
+      "cleanup": ["*.dist-info", "__pycache__"]
+    },
+    {
+      "name": "bookshelf",
+      "buildsystem": "simple",
+      "sources": [
+        {
+          "type": "dir",
+          "path": "."
+        }
+      ],
+      "build-commands": [
+        "install -d ${FLATPAK_DEST}/lib/bookshelf ${FLATPAK_DEST}/bin ${FLATPAK_DEST}/share/applications ${FLATPAK_DEST}/share/metainfo ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps ${FLATPAK_DEST}/share/licenses/bookshelf",
+        "cp -r src ${FLATPAK_DEST}/lib/bookshelf/src",
+        "cp -r assets ${FLATPAK_DEST}/lib/bookshelf/assets",
+        "rm -rf ${FLATPAK_DEST}/lib/bookshelf/assets/screenshots",
+        "install -m 644 VERSION ${FLATPAK_DEST}/lib/bookshelf/VERSION",
+        "install -m 644 LICENSE ${FLATPAK_DEST}/share/licenses/bookshelf/LICENSE",
+        "install -m 755 packaging/flatpak-launcher ${FLATPAK_DEST}/bin/bookshelf",
+        "install -m 644 packaging/io.github.farukylmz0550.BookShelfLegacy.desktop ${FLATPAK_DEST}/share/applications/",
+        "install -m 644 packaging/io.github.farukylmz0550.BookShelfLegacy.metainfo.xml ${FLATPAK_DEST}/share/metainfo/",
+        "install -m 644 assets/icons/hicolor/256x256/apps/io.github.farukylmz0550.BookShelfLegacy.png ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/",
+        "install -m 644 assets/icons/hicolor/scalable/apps/io.github.farukylmz0550.BookShelfLegacy-symbolic.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/"
+      ]
+    }
+  ]
+}
