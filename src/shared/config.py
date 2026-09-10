@@ -108,49 +108,12 @@ def set_library_dir(folder: Path) -> bool:
 
 
 def theme() -> str:
-    """Which of the supported themes the user picked.
-
-    Falls back to the default and maps legacy values onto the current Fluent/
-    Contrast set while keeping custom QSS as a valid override.
-    """
-    from shared.theme import (
-        CONTRAST_DARK,
-        CONTRAST_LIGHT,
-        CUSTOM,
-        DEFAULT_THEME,
-        DEFAULT_DARK,
-        DEFAULT_LIGHT,
-        FLUENT_DARK,
-        FLUENT_LIGHT,
-        THEMES,
-    )
-
-    data = load()
-    saved = data.get("theme")
-    legacy_map = {
-        "m3-light": DEFAULT_LIGHT,
-        "m3-dark": DEFAULT_DARK,
-        "adwaita-light": DEFAULT_LIGHT,
-        "adwaita-dark": DEFAULT_DARK,
-        "system": DEFAULT_DARK,
-        "custom": CUSTOM,
-        "contrast-light": CONTRAST_LIGHT,
-        "contrast-dark": CONTRAST_DARK,
-        "fluent-light": DEFAULT_LIGHT,
-        "fluent-dark": DEFAULT_DARK,
-    }
-    if saved in THEMES:
+    """Which of the supported themes the user picked, defaulting to dark."""
+    saved = load().get("theme")
+    names = ("default-light", "default-dark", "contrast-light", "contrast-dark", "custom")
+    if isinstance(saved, str) and saved in names:
         return saved
-    if saved in legacy_map:
-        return legacy_map[saved]
-    old = data.get("theme_mode")
-    if old == "system":
-        return FLUENT_DARK
-    if old == "light":
-        return FLUENT_LIGHT
-    if old == "dark":
-        return FLUENT_DARK
-    return DEFAULT_THEME
+    return "default-dark"
 
 
 def set_theme(name: str) -> bool:
@@ -180,4 +143,3 @@ def setup_done() -> bool:
 
 def set_setup_done() -> bool:
     return update(setup_done=True)
-# 01001001001000000011110000110011 00100000010010110110000101110100 01101001011100000100001101100101 01101100011001010110001001101001

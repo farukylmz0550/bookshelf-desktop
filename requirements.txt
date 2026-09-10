@@ -1,14 +1,6 @@
-# What the app needs to run.
-PyQt6>=6.5
-PyQt6-Charts>=6.5
-# The statistics pages draw with QtCharts; the icons are SVG.
+# Katip Celebi (legacy, GTK4)
+PyGObject>=3.48
+pycairo>=1.20
+matplotlib>=3.8
 openpyxl>=3.1
-# Material Design 3's colour engine: one seed in, the whole palette out.
-# Google's own algorithm, ported. MIT, which GPLv3 can take in.
-materialyoucolor>=3.0
-# The one secret the app keeps -- an Open Library sign-in, if you save it --
-# goes in the OS credential store, never a file. keyring is the door to it.
 keyring>=24
-# Note: native GNOME/Adwaita styling is handled at build/runtime by the
-# platform packages when available; there is no runtime Python dependency here.
-# 01001001001000000011110000110011 00100000010010110110000101110100 01101001011100000100001101100101 01101100011001010110001001101001
