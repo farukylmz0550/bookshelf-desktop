@@ -33,7 +33,25 @@ class KatipApp(Adw.Application):
         self.do_activate()
 
 
+def _use_fontconfig_fontmap() -> None:
+    """Force Pango's fontconfig fontmap on Windows.
+
+    Pango picks its Win32 fontmap there, whose GDI text rendering comes out
+    mangled (garbled glyphs under Wine and thin rendering on real Windows);
+    the fontconfig fontmap renders cleanly and is what the bundle is built
+    around. Must run before GTK opens the first display.
+    """
+    if sys.platform != "win32":
+        return
+    gi.require_version("PangoCairo", "1.0")
+    from gi.repository import PangoCairo
+
+    fontmap = PangoCairo.FontMap.new_for_font_type(1)  # 1 = cairo FT backend
+    fontmap.set_default()
+
+
 def main(argv=None) -> None:
+    _use_fontconfig_fontmap()
     folder = config.library_dir()
     if folder is not None:
         logs.point_at(folder)
