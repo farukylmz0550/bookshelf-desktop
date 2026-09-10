@@ -14,7 +14,7 @@ from gi.repository import Adw, Gio, GLib
 from shared import config, logs, texts, theme
 from ui.window import MainWindow
 
-APP_ID = "io.github.farukylmz0550.BookShelfLegacy"
+from shared.paths import APP_ID  # noqa: F401 - re-exported for the application
 logger = logging.getLogger("bookshelf")
 
 

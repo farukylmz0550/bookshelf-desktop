@@ -26,6 +26,7 @@ import sys
 from pathlib import Path
 
 APP_DIR_NAME = "BookShelf"
+APP_ID = "io.github.farukylmz0550.BookShelfLegacy"
 
 # The user's own files, inside the folder they picked. Deliberately not the
 # names the previous version used: if someone points this app at their old

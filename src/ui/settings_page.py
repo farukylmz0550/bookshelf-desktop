@@ -111,7 +111,7 @@ class SettingsPage(Adw.PreferencesPage):
 
     def _cache_row(self) -> Adw.ActionRow:
         row = Adw.ActionRow(title=text("settings_cache"))
-        row.set_subtitle(text("settings_cache_size").format(size=self._cache_size_mb()))
+        row.set_subtitle(text("settings_cache_size").format(size=self._cache_size()))
         clear = Gtk.Button(label=text("settings_clear_cache"))
         clear.add_css_class("flat")
         clear.connect("clicked", lambda _b: self._clear_cache())
@@ -166,4 +166,7 @@ class SettingsPage(Adw.PreferencesPage):
             title=text("app_name"),
             subtitle=f"v{version} · GPL-3.0 · github.com/farukylmz0550/bookshelf-legacy",
         )
+        logo = Gtk.Image.new_from_file(str(paths.assets_dir() / "logo.png"))
+        logo.set_pixel_size(28)
+        row.add_prefix(logo)
         return row

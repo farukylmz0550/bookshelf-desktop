@@ -21,9 +21,11 @@ from core.goals import Goals
 from core.ledger import Ledger
 from core.store import Library
 from services.cover_loader import CoverLoader
-from shared import config, texts, theme
+from shared import config, icons, texts, theme
 from shared.logs import point_at
+from shared.paths import assets_dir
 from shared.texts import text
+from shared.paths import APP_ID
 
 from .books.add_page import AddPage
 from .books.library_page import LibraryPage
@@ -43,6 +45,7 @@ class MainWindow(Adw.ApplicationWindow):
         super().__init__(application=app)
         self.set_title(text("app_name"))
         self.set_default_size(1000, 640)
+        self._install_icon()
         self.covers = CoverLoader()
 
         self.overlay = Adw.ToastOverlay()
@@ -123,6 +126,14 @@ class MainWindow(Adw.ApplicationWindow):
     def _icon(self, key: str) -> str:
         from shared.icons import name
         return name(key)
+
+    def _install_icon(self) -> None:
+        """Make the bundled app icon resolvable as `APP_ID` for this window."""
+        search = Gtk.IconTheme.get_for_display(self.get_display())
+        path = str(assets_dir() / "icons")
+        if path not in search.get_search_path():
+            search.add_search_path(path)
+        self.set_default_icon_name(APP_ID)
 
     def _nav_clicked(self, _button, tag: str) -> None:
         page = getattr(self, f"_{tag}_page", None)

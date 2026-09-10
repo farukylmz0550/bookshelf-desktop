@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.farukylmz0550.BookShelfLegacy</id>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>Book Shelf</name>
+  <summary>Personal library manager for GNOME</summary>
+  <description>
+    <p>
+      Book Shelf is a personal library manager: add books by ISBN with
+      automatic metadata from Open Library, track lending with borrowers and
+      a trust score, follow your reading with status, dates and goals, and
+      review your collection with statistics and pie charts.
+    </p>
+    <p>
+      It can import and export Excel spreadsheets, contribute missing books
+      back to Open Library, and speaks six languages.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.farukylmz0550.BookShelfLegacy.desktop</launchable>
+  <url type="homepage">https://github.com/farukylmz0550/bookshelf-desktop</url>
+  <url type="bugtracker">https://github.com/farukylmz0550/bookshelf-desktop/issues</url>
+  <developer_name>farukylmz0550</developer_name>
+  <provides>
+    <binary>bookshelf</binary>
+  </provides>
+  <categories>
+    <category>Office</category>
+  </categories>
+  <releases>
+    <release version="1.1.0" date="2026-09-10">
+      <description>
+        <p>New application icons and logo, desktop and AppStream metadata, and official RPM, DEB and Arch packages.</p>
+      </description>
+    </release>
+  </releases>
+  <content_rating type="oars-1.1"/>
+</component>

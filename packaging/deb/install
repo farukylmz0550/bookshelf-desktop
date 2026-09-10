@@ -1,0 +1,7 @@
+src /usr/lib/bookshelf/
+assets /usr/lib/bookshelf/
+VERSION /usr/lib/bookshelf/
+LICENSE /usr/share/licenses/bookshelf/
+packaging/bookshelf-launcher /usr/bin/bookshelf
+packaging/io.github.farukylmz0550.BookShelfLegacy.desktop /usr/share/applications/
+packaging/io.github.farukylmz0550.BookShelfLegacy.metainfo.xml /usr/share/metainfo/

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Book Shelf
+Comment=Personal library manager
+Comment[tr]=Kişisel kütüphane yöneticisi
+Exec=bookshelf
+Icon=io.github.farukylmz0550.BookShelfLegacy
+Terminal=false
+Categories=Office;Viewer;GNOME;GTK;
+Keywords=books;library;reading;kitap;
+StartupNotify=true

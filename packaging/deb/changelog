@@ -1,0 +1,6 @@
+bookshelf (1.1.0-1) unstable; urgency=medium
+
+  * New application icons and logo, desktop and AppStream metadata,
+    and official RPM, DEB and Arch packages.
+
+ -- farukylmz0550 <farukylmz0550@gmail.com>  Thu, 10 Sep 2026 00:00:00 +0000

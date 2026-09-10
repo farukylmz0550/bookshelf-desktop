@@ -6,6 +6,8 @@ import gi
 gi.require_version("Adw", "1")
 from gi.repository import Gtk
 
+from shared.icons import APP_LOGO
+from shared.paths import assets_dir
 from shared.texts import text
 
 
@@ -17,6 +19,9 @@ class WelcomePage(Gtk.Box):
             orientation=Gtk.Orientation.VERTICAL, spacing=24,
             valign=Gtk.Align.CENTER, halign=Gtk.Align.CENTER, vexpand=True,
         )
+        logo = Gtk.Image.new_from_file(str(assets_dir() / "logo.png"))
+        logo.set_pixel_size(96)
+        self.append(logo)
         line = Gtk.Label(label=text("welcome_line"), wrap=True, justify=Gtk.Justification.CENTER)
         line.add_css_class("title-2")
         self.append(line)

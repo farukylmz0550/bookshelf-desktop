@@ -3,7 +3,8 @@
 
 """Standard icon names resolved through the GTK icon theme."""
 
-APP_LOGO = "assets/logo.svg"  # pending: new logo
+APP_LOGO = "assets/logo.png"
+APP_LOGO_SYMBOLIC = "assets/logo-symbolic.png"
 
 # Logical name -> freedesktop/GNOME symbolic icon name.
 ICONS = {

@@ -1,0 +1,20 @@
+Source: bookshelf
+Section: utils
+Priority: optional
+Maintainer: farukylmz0550 <farukylmz0550@gmail.com>
+Standards-Version: 4.7.0
+Build-Depends: debhelper-compat (= 13)
+Rules-Requires-Root: no
+Homepage: https://github.com/farukylmz0550/bookshelf-desktop
+
+Package: bookshelf
+Architecture: all
+Depends: ${misc:Depends}, python3:any, python3-gi, python3-gi-cairo, python3-cairo,
+ gir1.2-gtk-4.0, gir1.2-adw-1, python3-matplotlib, python3-openpyxl, python3-keyring
+Description: Personal library manager for GNOME
+ Book Shelf is a personal library manager built with GTK4 + libadwaita.
+ It manages books by ISBN with automatic metadata from Open Library,
+ tracks lending with borrowers and a trust score, follows reading with
+ status, dates and goals, and reports statistics with pie charts. It can
+ import and export Excel spreadsheets and contribute missing books back
+ to Open Library.
