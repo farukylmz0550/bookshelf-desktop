@@ -52,3 +52,6 @@ desktop.ini
 
 #Licanse.txt for InnoSetup
 LICENSE.txt
+
+# Release source tarball.
+*.tar.gz
