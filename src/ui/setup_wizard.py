@@ -66,7 +66,7 @@ class SetupPage(Gtk.Box):
     def _theme_row(self) -> Adw.ActionRow:
         self._themes = ["default-light", "default-dark", "contrast-light", "contrast-dark", "custom"]
         model = Gtk.StringList.new(
-            [text(f"theme_{t}") if t != "custom" else text("theme_custom") for t in self._themes]
+            [text("theme_" + t.replace("-", "_")) for t in self._themes]
         )
         drop = Gtk.DropDown(model=model)
         current = config.theme() or DEFAULT
@@ -82,13 +82,12 @@ class SetupPage(Gtk.Box):
 
     def _folder_row(self) -> Adw.ActionRow:
         self.folder = config.library_dir() or Path.home() / "Documents" / "BookShelf"
-        self.folder_label = Gtk.Label(label=str(self.folder), ellipsize=3)
-        row = Adw.ActionRow(title=text("settings_where"))
-        row.set_subtitle_widget(self.folder_label)
+        row = Adw.ActionRow(title=text("settings_where"), subtitle=str(self.folder))
         browse = Gtk.Button(label=text("setup_browse"))
         browse.add_css_class("flat")
         browse.connect("clicked", self._choose)
         row.add_suffix(browse)
+        self.folder_row = row
         return row
 
     def _choose(self, _button) -> None:
@@ -96,7 +95,7 @@ class SetupPage(Gtk.Box):
 
     def _picked(self, folder: Path) -> None:
         self.folder = folder
-        self.folder_label.set_text(str(folder))
+        self.folder_row.set_subtitle(str(folder))
 
     def _start(self, _button) -> None:
         self.on_done(self.folder)
