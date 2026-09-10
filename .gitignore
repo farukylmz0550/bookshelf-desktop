@@ -39,6 +39,12 @@ htmlcov/
 .flatpak-builder/
 packaging/flatpak/wheels/
 
+# Built release artifacts.
+*.rpm
+*.deb
+*.flatpak
+*.pkg.tar.zst
+
 # OS files.
 .DS_Store
 Thumbs.db
