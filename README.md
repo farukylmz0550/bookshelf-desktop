@@ -15,7 +15,35 @@ This is the final desktop edition of Book Shelf. The main repository continues a
 - Contributing missing books back to Open Library (keyring-stored credentials)
 - Theme (light/dark/contrast via libadwaita) and six languages
 
-## Requirements
+## Install
+
+Download a package from the [releases](https://github.com/farukylmz0550/bookshelf-desktop/releases) page.
+
+**Flatpak** — everything included, works on any distribution:
+
+```bash
+flatpak install ./BookShelf-1.1.0.flatpak
+```
+
+**RPM** (Fedora and derivatives) — dependencies resolve automatically:
+
+```bash
+sudo dnf install ./bookshelf-1.1.0-1.noarch.rpm
+```
+
+**DEB** (Debian, Ubuntu and derivatives):
+
+```bash
+sudo apt install ./bookshelf_1.1.0-1_all.deb
+```
+
+**Arch** (also usable as a PKGBUILD for AUR submission):
+
+```bash
+sudo pacman -U bookshelf-1.1.0-1-any.pkg.tar.zst
+```
+
+## Requirements (running from source)
 
 GTK 4.10+, libadwaita 1.4+, Python 3.11+.
 
@@ -29,6 +57,19 @@ pip install -r requirements.txt
 ```bash
 python3 src/main.py
 ```
+
+## Packaging
+
+Build scripts for every target live under `packaging/`:
+
+```bash
+sh packaging/build-rpm.sh      # bookshelf-*.rpm
+sh packaging/build-deb.sh      # bookshelf_*_all.deb
+sh packaging/build-arch.sh     # bookshelf-*.pkg.tar.zst (requires makepkg)
+sh packaging/build-flatpak.sh  # BookShelf-*.flatpak (requires flatpak-builder)
+```
+
+All scripts stage the tree with `git archive`, so every packaging commit must be committed first.
 
 ## Tests
 
