@@ -7,7 +7,8 @@ import os
 from pathlib import Path
 
 ROOT = Path(SPECPATH).resolve().parent.parent
-SCHEMAS_DIR = os.environ.get("GLIB_SCHEMAS_DIR", "/mingw64/share/glib-2.0/schemas")
+PREFIX = os.path.dirname(os.path.dirname(os.environ.get("GI_TYPELIB_PATH", "C:\\msys64\\mingw64\\lib\\girepository-1.0")))
+SCHEMAS_DIR = os.path.join(PREFIX, "share", "glib-2.0", "schemas")
 
 schemas = [(s, "share/glib-2.0/schemas") for s in glob.glob(os.path.join(SCHEMAS_DIR, "*"))]
 
@@ -18,6 +19,7 @@ a = Analysis(
     datas=[
         (str(ROOT / "assets"), "assets"),
         (str(ROOT / "VERSION"), "."),
+        (str(ROOT / "packaging" / "windows" / "fonts"), "share/fonts"),
         *schemas,
     ],
     hiddenimports=[
@@ -26,9 +28,12 @@ a = Analysis(
     excludes=["tkinter"],
     hooksconfig={
         "gi": {
-            "Gtk": ["4.0"],
-            "Adw": ["1"],
-            "GdkPixbuf": ["2.0"],
+            "module-versions": {
+                "Gtk": "4.0",
+                "Gdk": "4.0",
+                "Adw": "1",
+                "GdkPixbuf": "2.0",
+            },
         },
     },
     runtime_hooks=[str(ROOT / "packaging" / "windows" / "rthook.py")],

@@ -43,6 +43,21 @@ sudo apt install ./bookshelf_1.1.0-1_all.deb
 sudo pacman -U bookshelf-1.1.0-1-any.pkg.tar.zst
 ```
 
+**Windows** — a portable build is attached to the release
+(`BookShelf-*-windows-x64.zip`): unpack it anywhere and run `BookShelf.exe`.
+The zip contains everything the app needs, including the GTK runtime,
+Python and the bundled Adwaita Sans font, so it works on a clean system.
+Build it yourself with PyInstaller against an MSYS2 GTK4 stack:
+
+```bash
+python -m PyInstaller packaging/windows/BookShelf.spec
+```
+
+The `packaging/windows` folder holds the spec, the runtime hook, the
+executable icon and the font files; the `dist/BookShelf` folder it produces
+is what an Inno Setup project points at to create the installer.
+
+
 ## Requirements (running from source)
 
 GTK 4.10+, libadwaita 1.4+, Python 3.11+.
@@ -70,6 +85,27 @@ sh packaging/build-flatpak.sh  # BookShelf-*.flatpak (requires flatpak-builder)
 ```
 
 All scripts stage the tree with `git archive`, so every packaging commit must be committed first.
+
+## Licenses and credits
+
+Book Shelf itself is **GPL-3.0-or-later** (see [LICENSE](LICENSE)). It stands
+on the shoulders of these projects, thanks to all of them:
+
+| Technology | Role | License |
+| --- | --- | --- |
+| [GTK 4](https://www.gtk.org/) | Widget toolkit | LGPL-2.1-or-later |
+| [libadwaita](https://gitlab.gnome.org/GNOME/libadwaita) | Application shell and design | LGPL-2.1-or-later |
+| [PyGObject](https://pygobject.gnome.org/) | Python bindings for the GNOME stack | LGPL-2.1-or-later |
+| [pycairo](https://www.cairographics.org/pycairo/) | Cairo bindings | LGPL-2.1-or-later |
+| [Python](https://www.python.org/) | The language itself | PSF-2.0 |
+| [matplotlib](https://matplotlib.org/) | Reading statistics charts | Matplotlib license (BSD-compatible) |
+| [openpyxl](https://openpyxl.readthedocs.io/) | Excel import/export | MIT |
+| [keyring](https://github.com/jaraco/keyring) | Credential storage | MIT |
+| [Adwaita Sans](https://gitlab.gnome.org/GNOME/adwaita-fonts) | UI font (bundled in the Windows build) | OFL-1.1 |
+| [MSYS2](https://www.msys2.org/) | GTK runtime for the Windows build | BSD-3-Clause (packages under their own licenses) |
+
+Third-party licenses are respected and reproduced where redistribution
+applies (see `packaging/windows/fonts/OFL.txt` for the font).
 
 ## Tests
 
